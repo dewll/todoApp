@@ -37,7 +37,7 @@ def detail(request, pk):
             models.Todo.objects.filter(pk=pk).update(title=title,description=description,completed=completed) #update and save into database
             return redirect('/') #return to the home page 
     if request.POST:
-        if 'delete' in request.POST: #check if it is HTTP POST request
+        if 'delete' in request.POST: #check if name 'delete' is in the HTTP POST request
             try:
                 models.Todo.objects.get(pk=pk).delete()
                 return redirect('/')
