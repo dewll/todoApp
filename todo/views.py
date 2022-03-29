@@ -9,7 +9,7 @@ def home(request):
     depending on what is input on the search box and if None it return
     all the columns in the database
     '''
-    if 'q' in request.GET: #check if the request is to add todo
+    if 'q' in request.GET: #check if the request.GET is to search for todo
         q = request.GET['q']
         todo = models.Todo.objects.filter(title__icontains=q) #query the db by q
     else:
